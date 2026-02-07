@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./CreateAccount.css";
+import { BASE_URL } from "../config/env";
 
 const CreateAccount: React.FC = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const CreateAccount: React.FC = () => {
 
     try {
       const response = await fetch(
-        "http://156.67.216.229/auth/register",
+        `${BASE_URL}/auth/register`,
         {
           method: "POST",
           headers: {
