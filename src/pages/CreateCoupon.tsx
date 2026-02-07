@@ -5,8 +5,9 @@ const CreateCoupon = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-      <div className="w-full max-w-4xl bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
+    <div className="h-screen bg-gray-50 flex items-center justify-center px-4 overflow-hidden">
+      <div className="w-full max-w-4xl bg-white rounded-2xl border border-gray-200 shadow-sm p-8 mt-8">
+
         <h2 className="text-2xl font-bold text-gray-900 mb-8">
           Create New Coupon
         </h2>
