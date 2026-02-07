@@ -1,15 +1,14 @@
-import { Sidebar } from "../components/Sidebar";
 import { CouponFilters } from "../components/CouponFilters";
 import { CouponTableComponent } from "../components/CouponTableComponent";
 import { Plus } from "lucide-react";
 import { useNavigate } from "react-router-dom"; // ✅ import useNavigate
+import { StatCard } from "../components/StatCard";
 
 export default function CouponManagement() {
   const navigate = useNavigate(); // ✅ initialize navigate
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
-      <Sidebar />
+      <>
 
       <main className="flex-1">
         {/* Header */}
@@ -39,27 +38,39 @@ export default function CouponManagement() {
         {/* Content */}
         <div className="max-w-7xl mx-auto px-6 py-8 space-y-8">
           {/* Stats Section */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-            <div className="bg-white rounded-xl border border-gray-200 p-6 text-center">
-              <div className="text-3xl font-bold text-gray-900 mb-2">8</div>
-              <div className="text-sm text-gray-500">Total Coupons</div>
-            </div>
+         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+    <StatCard
+      value="8"
+      label="Total Coupons"
+      valueColor="text-gray-900"
+              variant="compact"
 
-            <div className="bg-white rounded-xl border border-gray-200 p-6 text-center">
-              <div className="text-3xl font-bold text-green-600 mb-2">8</div>
-              <div className="text-sm text-gray-500">Active</div>
-            </div>
+    />
 
-            <div className="bg-white rounded-xl border border-gray-200 p-6 text-center">
-              <div className="text-3xl font-bold text-gray-900 mb-2">0</div>
-              <div className="text-sm text-gray-500">Inactive</div>
-            </div>
+    <StatCard
+      value="8"
+      label="Active"
+      valueColor="text-green-600"
+              variant="compact"
 
-            <div className="bg-white rounded-xl border border-gray-200 p-6 text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">4</div>
-              <div className="text-sm text-gray-500">Featured</div>
-            </div>
-          </div>
+    />
+
+    <StatCard
+      value="0"
+      label="Inactive"
+      valueColor="text-gray-900"
+              variant="compact"
+
+    />
+
+    <StatCard
+      value="4"
+      label="Featured"
+      valueColor="text-blue-600"
+              variant="compact"
+
+    />
+  </div>
 
           {/* Filters */}
           <CouponFilters />
@@ -68,6 +79,6 @@ export default function CouponManagement() {
           <CouponTableComponent />
         </div>
       </main>
-    </div>
+    </>
   );
 }
