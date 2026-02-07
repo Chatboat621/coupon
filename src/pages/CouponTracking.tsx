@@ -1,4 +1,3 @@
-import { Sidebar } from "../components/Sidebar";
 import { StatCard } from "../components/StatCard";
 import { TrendsChart } from "../components/chart/TrendsChart";
 import { QuickStats } from "../components/QuickStats";
@@ -8,8 +7,7 @@ import { Eye, Percent, TrendingUp, BarChart3 } from "lucide-react";
 
 export default function Index() {
   return (
-    <div className="flex min-h-screen bg-gray-50">
-      <Sidebar />
+    <>
 
       <main className="flex-1">
         {/* Header */}
@@ -84,6 +82,6 @@ export default function Index() {
           </section>
         </div>
       </main>
-    </div>
+    </>
   );
 }

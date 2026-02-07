@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Auth.css";
-
+import { BASE_URL } from "../config/env";
 const Login: React.FC = () => {
   const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ const Login: React.FC = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://156.67.216.229/auth/login", {
+      const response = await fetch(`${BASE_URL}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -36,11 +36,11 @@ const Login: React.FC = () => {
         // ✅ Redirect to dashboard
         navigate("/dashboard");
       } else {
-        alert("Invalid login credentials");
+        // alert("Invalid login credentials");
       }
     } catch (error) {
       console.error("Login error:", error);
-      alert("Something went wrong");
+      // alert("Something went wrong");
     } finally {
       setLoading(false);
     }

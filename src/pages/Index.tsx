@@ -1,4 +1,3 @@
-import { Sidebar } from "../components/Sidebar";
 import { StatCard } from "../components/StatCard";
 import { RevenueChart } from "../components/chart/RevenueChart";
 import { SalesByCategory } from "../components/chart/SalesByCategory";
@@ -13,8 +12,7 @@ import {
 
 export default function Index() {
   return (
-    <div className="flex min-h-screen bg-gray-50">
-      <Sidebar />
+    <>
 
       <main className="flex-1">
         {/* Header */}
@@ -83,6 +81,6 @@ export default function Index() {
           </section>
         </div>
       </main>
-    </div>
+    </>
   );
 }
